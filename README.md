@@ -22,7 +22,7 @@
     <li><p><strong>django.views.generic.list_detail.object_list</strong> pasa a ser <strong>django.views.generic.list.ListView</strong> En vez de:</p>
     <pre class="sourceCode Python"><code class="sourceCode python">object_list(request, template_name=template_name, **kwargs)</code></pre>
     <p>Una forma rápida de solucionarlo es:</p>
-    <pre class="sourceCode Python"><code class="sourceCode python">ListView.as_view(request, template_name=template_name, **kwargs)                </code></pre>
+    <pre class="sourceCode Python"><code class="sourceCode python">render_to_response(request, template_name=template_name, **kwargs)                </code></pre>
     <p>Digo una forma rápida porque en realidad, esta solución se aplica cuando se adapta un proyecto con vistas basadas en funciones, para una implementación menos <em>herética</em> es necesario definir una clase que herede de ListView y a partir de allí realizar la implementación de la vista. <a href="https://docs.djangoproject.com/en/1.4/topics/generic-views-migration/#replace-generic-views-with-generic-classes">[Más información]</a></p></li>
     <li><p>static files: agrega <strong>django.contrib.staticfiles</strong> para manejar los archivos estáticos necesarios para renderizar un página.</p>
     <p>Se separan los archivos esáticos subidos por el usuario de los que son necesarios para renderizar la página (JS, CSS, imágenes, etc) y pasan a ubicarse en subdirectorios de <em>static/</em> d cada app o en dirctorios listados en STATICFILES_DIRS y que se guradarán en STATIC_URL.</p></li>
