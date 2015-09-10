@@ -1,4 +1,3 @@
-<body>
 <div class="container">
     <div class="row">
     <h1> ephicmigration v1.0 </h1>
@@ -233,5 +232,3 @@
     </div>
     
 </div>
-</body>
-</html>
